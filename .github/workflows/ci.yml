@@ -6,7 +6,7 @@ on:
       - main # Trigger this workflow only for the main branch
   pull_request:
     branches:
-      - main # Trigger this workflow for PRs targeting the main branch
+      - main 
 
 jobs:
   build:
