@@ -2,28 +2,27 @@ name: Node.js CI
 
 on:
   push:
-    branches:
-      - main # Trigger this workflow only for the main branch
+    branches: [ main ]
   pull_request:
-    branches:
-      - main # Trigger this workflow for PRs targeting the main branch
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16' # Specify Node.js version
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # ✅ Use Node.js 18 to support Express 5.1.0
 
-      - name: Install dependencies
-        run: |
-          npm install
+    - name: Install dependencies
+      run: |
+        npm install  # ✅ Prefer npm here since you're using package-lock.json
 
-      - name: Run tests
-        run: |
-          npm test
+    - name: Run tests
+      run: |
+        npm test
