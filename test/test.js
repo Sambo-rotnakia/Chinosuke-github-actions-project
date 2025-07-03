@@ -1,7 +1,7 @@
 // test/test.js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../app'); // ✅ Use require, NOT import
+const app = require('../app'); 
 
 const expect = chai.expect;
 chai.use(chaiHttp);

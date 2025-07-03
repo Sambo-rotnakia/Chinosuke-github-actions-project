@@ -12,4 +12,4 @@ app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
 
-module.exports = app; // ✅ CommonJS export
+module.exports = app;
